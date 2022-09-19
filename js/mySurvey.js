@@ -16,6 +16,9 @@ const fetchSurvey = () => {
         .then((response) => response.json())
         .then((webResult) => {
             webResult.result.map(item => SurveyListTemplate(item));
+            if(webResult.result.length != 0){
+                $(".length_zero_txt").css("display","none");
+            }
             slick();
         })
         .catch((error) => console.log("error", error));
@@ -48,7 +51,8 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
     </div>
     `;
@@ -74,7 +78,9 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
+                                    <button id="modifyBtn" >수정불가</button></div>
+            
         </div>
     </div>`;
     const SurveyItem3 = `
@@ -99,7 +105,8 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
     </div>`;
 

@@ -207,6 +207,25 @@ footer .container {
     color: #909090;
 }
 
+#modifyBtn {
+    float:right;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    color: #909090;
+}
+
+.length_zero_txt{
+    padding-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6C6C6C;
+}
+
 /*footer*/
 footer {
     background-color: white;
